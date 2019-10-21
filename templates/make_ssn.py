@@ -12,7 +12,7 @@ class SSN():
 	def build_graph(self):
 		# Add nodes.
 		for record in SeqIO.parse(self.fasta_records, 'fasta'):
-			self.G.add_node(record.id)
+			self.G.add_node(record.id, description=record.description)
 	
 		# Add eddges.
 		with open(self.identity_file, 'r') as f:
