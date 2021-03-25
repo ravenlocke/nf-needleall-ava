@@ -41,7 +41,6 @@ process exposeData {
 }
 
 process runNeedleall {
-	container 'ravenlocke/emboss:latest'
 
 	input:
 	file fasta_file from calculate_identity
@@ -56,8 +55,6 @@ process runNeedleall {
 
 process buildGraph {
         publishDir "${outdir}", mode: "copy"
-
-        container 'ravenlocke/biopython:latest'
 
         input:
         file fasta_file from build_graph
